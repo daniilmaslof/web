@@ -1,0 +1,24 @@
+<form class="form-group" #f="ngForm" novalidate >
+  <label>Тема лекции</label>
+  <input type="text" class="form-control" name="topicLecture" [(ngModel)]="model.topicLecture" required
+         #topicLecture='ngModel'>
+  <label>дата лекции</label>
+  <input type="text" class="form-control" name="dateLecture" [(ngModel)]="model.dateLecture" required
+         #dateLecture='ngModel'>
+  <label>Длительность лекции</label>
+  <input type="text" class="form-control" name="durationLecture" [(ngModel)]="model.durationLecture" required
+         #durationLecture='ngModel'>
+  <label>кабинет лекции</label>
+  <input type="text" class="form-control" name="hallLecture" [(ngModel)]="model.hallLecture" required
+         #hallLecture='ngModel'>
+  <label>теги лекции</label>
+  <input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsLecture" required
+         #tagsLecture='ngModel'>
+<span *ngFor="let speaker of model.speakers">
+  
+</span>
+
+</form>
+<pre>
+  {{f.value| json}}
+</pre>

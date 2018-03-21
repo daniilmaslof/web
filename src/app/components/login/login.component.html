@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<hr><br>
+<form  [formGroup]="form1" >
+
+ <fieldset>
+    <legend>Login</legend>
+   <div class="form-field">
+     <label>Email:</label>
+     <input type="text" name="mail"  formControlName="mail" required>
+   </div>
+   <div class="form-field">
+     <label>Password:</label>
+    <input type="password" name="password" formControlName="password" required>
+   </div>
+ </fieldset>
+   <div class="form-buttons"></div>
+    <button class="button button-primary" (click)="login()" >отправить</button>
+
+</form>
