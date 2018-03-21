@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     if (this.form1.valid) {
       const val = this.form1.value;
 this.auth.login(val.mail, val.password).subscribe(
-  () => { this.router.navigateByUrl('/');
+  () => { console.log('ok'); this.router.navigateByUrl('/');
   }
 );
     }

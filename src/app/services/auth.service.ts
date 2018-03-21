@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class AuthService {
-private BaseUrl = '';
+private BaseUrl = 'localhost:8080';
   constructor(private  http: HttpClient) {
   }
 
