@@ -23,10 +23,12 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.form1.valid) {
       const val = this.form1.value;
-this.auth.login(val.mail, val.password).subscribe(
-  () => { console.log('ok'); this.router.navigateByUrl('/');
-  }
-);
+      this.auth.login(val.mail, val.password).subscribe(
+        () => {
+          console.log('ok');
+          this.router.navigateByUrl('/');
+        }
+      );
     }
   }
   ngOnInit() {
