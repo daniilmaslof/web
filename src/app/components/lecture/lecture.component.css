@@ -1,3 +1,18 @@
 label{
   display: block;
 }
+h1{
+
+}
+app-speaker-element{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+mat-form-field{
+  display: block;
+}
+.q{
+  width: 100px
+}
+

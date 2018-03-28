@@ -1,23 +1,44 @@
+<h1>спикеры</h1>
+<app-speaker-element  *ngFor="let speaker of model.speakers; index as i;" (click)="navigae(i, speaker)" [speaker]="speaker">
+</app-speaker-element>
+<button  (click)="addSpeaker()">добавить speaker</button>
 <form class="form-group" #f="ngForm" novalidate >
-  <label>Тема лекции</label>
-  <input type="text" class="form-control" name="topicLecture" [(ngModel)]="model.topicLecture" required
-         #topicLecture='ngModel'>
-  <label>дата лекции</label>
-  <input type="text" class="form-control" name="dateLecture" [(ngModel)]="model.dateLecture" required
-         #dateLecture='ngModel'>
-  <label>Длительность лекции</label>
-  <input type="text" class="form-control" name="durationLecture" [(ngModel)]="model.durationLecture" required
+<mat-input-container>
+  <input matInput placeholder="Тема Лекции"  type="text" class="form-control" name="topicLecture"
+            [(ngModel)]="model.topicLecture" required  #topicLecture='ngModel'>
+</mat-input-container>
+  <mat-form-field>
+  <textarea matInput placeholder="Информация о Лекции"  type="text" class="form-control" name="informationLecture"
+            matTextareaAutosize matAutosizeMinRows="3"
+            [(ngModel)]="model.informationLecture" required matAutosizeMaxRows="12" #informationLecture='ngModel'>
+  </textarea>
+  </mat-form-field>
+  <mat-input-container>
+  <label>длительность лекции</label>
+  <input matInput type="text" class="form-control" name="durationLecture" [(ngModel)]="model.durationLecture" required
          #durationLecture='ngModel'>
+  </mat-input-container>
+  <mat-input-container>
   <label>кабинет лекции</label>
-  <input type="text" class="form-control" name="hallLecture" [(ngModel)]="model.hallLecture" required
+  <input matInput type="text" class="form-control" name="hallLecture" [(ngModel)]="model.hallLecture" required
          #hallLecture='ngModel'>
+  </mat-input-container>
+
+  <!--<mat-form-field>-->
+  <!--<label>дата лекции</label>-->
+  <!--<input  matInput  placeholder="Выбрать дату" type="text" class="form-control" name="dateLecture" [(ngModel)]="model.dateLecture" required-->
+  <!--#dateLecture='ngModel'>-->
+  <!--</mat-form-field>-->
+  <mat-form-field  class="q">
+    <input matInput class="q"  [(ngModel)]="model.dateLecture" name="dateLecture" [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle class="q" matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker class="q" #picker></mat-datepicker>
+  </mat-form-field>
+
   <label>теги лекции</label>
   <input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsLecture" required
          #tagsLecture='ngModel'>
-<span *ngFor="let speaker of model.speakers">
-  
-</span>
-
+  <button type="button" (click)="onSubmit()">Отправить</button>
 </form>
 <pre>
   {{f.value| json}}
