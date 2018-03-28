@@ -1,0 +1,42 @@
+<form class="form-group" #f="ngForm" novalidate >
+  <mat-input-container>
+    <label>Имя</label>
+  <input matInput type="text" class="form-control" name="name" [(ngModel)]="model.name"   required
+         #name='ngModel'>
+  </mat-input-container>
+  <mat-input-container>
+    <label>Фамилия</label>
+  <input matInput type="text" class="form-control" name="surName" [(ngModel)]="model.surName" required
+         #surName='ngModel'>
+  </mat-input-container>
+  <mat-input-container>
+  <label>Отчество</label>
+  <input matInput type="text" class="form-control" name="otchestvo" [(ngModel)]="model.otchestvo" required
+         #otchestvo='ngModel'>
+  </mat-input-container>
+  <label class="qw">фОТО</label>
+  <div ng2FileDrop
+       [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+       (fileOver)="fileOverBase($event)"
+       [uploader]="uploader"
+       class="my-drop-zone">
+    Base drop zone
+  </div>
+<img appImagePreview class="image" src="" [media]="file" [type]="type">
+  <mat-form-field>
+  <textarea matInput placeholder="Информация о ведущем"  type="text" class="form-control" name="informationSpeaker"
+            [(ngModel)]="model.informationSpeaker"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="12"
+         #informationSpeaker='ngModel'>
+  </textarea>
+  </mat-form-field>
+  <label>теги</label>
+  <input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsSpeaker" required
+         #tagsSpeaker='ngModel'>
+
+  <button mat-raised-button color="primary"  >send
+  </button>
+
+</form>
+<pre>
+  {{f.value| json}}
+</pre>
