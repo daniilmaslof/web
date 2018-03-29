@@ -22,7 +22,7 @@ private BaseUrl = 'http://localhost:8080';
     localStorage.removeItem('id_token');
   }
   // register(email: string, password: string): Observable<any> {
-  //   let url = `${this.BaseUrl}/registrer`;
+  //   let url = `${this.BaseUrl}/registrer`;1
   //   return this.http.post(url, {email, password} ).shareReplay();
   // }
 }
