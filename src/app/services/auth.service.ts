@@ -21,9 +21,9 @@ private BaseUrl = 'http://localhost:8080';
   logout() {
     localStorage.removeItem('id_token');
   }
-  //xx
   // register(email: string, password: string): Observable<any> {
   //   let url = `${this.BaseUrl}/registrer`;1
   //   return this.http.post(url, {email, password} ).shareReplay();
   // }
+  // xsd
 }
