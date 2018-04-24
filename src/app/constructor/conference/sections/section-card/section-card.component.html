@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header"  [style.background-size]="'cover'" [style.background-position]="'center'"
+       [ngStyle]="{background:' url('+section.logo.src +')'}">
+    <button mat-mini-fab   class="buttonEdit">
+      <mat-icon><i class="material-icons">edit</i></mat-icon>
+    </button>
+    <div class="card-header-bar">
+      <a href="#" class="btn-message"><span class="sr-only">Message</span></a>
+      <a href="#" class="btn-menu"><span class="sr-only">Menu</span></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <h2 class="name">Секция  {{section.name}}</h2>
+    <h4 class="job-title"></h4>
+    <div class="shortInf">{{section.shortInfAboutSection}} </div>
+    <footer class=" card-body-footer flex">
+      <div class=" mdl-color-text--grey-600">Кабинет:
+        {{section.lection_hall}}
+      </div>
+    </footer>
+  </div>
+  <div class="card-footer">
+    <div class="stat">
+
+    </div>
+    <div class="stat">
+
+    </div>
+    <div class="stat">
+      <div class=" mdl-color-text--grey-600">Аудитория:
+        {{section.lection_hall}}
+      </div> <span class="value"><i class="fa fa-user" aria-hidden="true"></i></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+
+  <!--<div class="card mdl-shadow&#45;&#45;2dp  mdl-card&#45;&#45;border mdl-cell-4-col-desktop">-->
+    <!--<div class="card-header" style="background-image: url(https://pp.userapi.com/c637919/v637919333/1018/fPUPb6na2Ls.jpg)">-->
+      <!--<div class="card-header-bar">-->
+        <!--<a href="#" class="btn-message"><span class="sr-only">Message</span></a>-->
+        <!--<a href="#" class="btn-menu"><span class="sr-only">Menu</span></a>-->
+      <!--</div>-->
+      <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-button&#45;&#45;mini-fab mdl-button&#45;&#45;colored" style="margin-top: 65%; margin-left: 85% ">-->
+        <!--<i class="material-icons">edit</i>-->
+      <!--</button>-->
+    <!--</div>-->
+
+    <!--<div class="card-body">-->
+      <!--<h2 class="name">Шапошников Константин</h2>-->
+      <!--<h4 class="job-title">Инженер</h4>-->
+      <!--<div class="bio">Работет в Максим Банке. Исполнительный директор и соучредитель. Банкир</div>-->
+      <!--<div class="social-accounts">-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="card-footer">-->
+      <!--<div class="stat">-->
+        <!--<a href="" style="color: black"><span class="value"><i class="fa fa-vk" aria-hidden="true"></i></span></a>-->
+      <!--</div>-->
+      <!--<div class="stat">-->
+        <!--<a href="" style="color: black"><span class="value"><i class="fa fa-linkedin" aria-hidden="true"></i></span></a>-->
+      <!--</div>-->
+      <!--<div class="stat">-->
+        <!--<a href="" style="color: black"><span class="value"><i class="fa fa-user" aria-hidden="true"></i></span></a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+    <div class="card">
+      <div class="card-header"  [style.background-size]="'cover'" [style.background-position]="'center'"
+           [ngStyle]="{background:' url('+speaker.photo.src +')'}">
+        <div class="card-header-bar">
+          <a href="#" class="btn-message"><span class="sr-only">Message</span></a>
+          <a href="#" class="btn-menu"><span class="sr-only">Menu</span></a>
+        </div>
+        <button mat-mini-fab (click)="openDialog()"  class="buttonEdit">
+          <mat-icon><i class="material-icons">edit</i></mat-icon>
+        </button>
+      </div>
+
+      <div class="card-body">
+        <h2 class="name">{{speaker.name}} {{speaker.surName}}</h2>
+        <h4 class="job-title">{{speaker.profession}}</h4>
+        <div class="shortInf">{{speaker.shortInformation}}</div>
+        </div>
+
+
+      <div class="card-footer">
+        <div class="stat">
+          <a href="" style="color: black"><span class="value"><i class="fa fa-vk" aria-hidden="true"></i></span></a>
+        </div>
+        <div class="stat">
+          <a href="" style="color: black"><span class="value"><i class="fa fa-linkedin" aria-hidden="true"></i></span></a>
+        </div>
+        <div class="stat">
+          <a href="" style="color: black"><span class="value"><i class="fa fa-user" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+    </div>

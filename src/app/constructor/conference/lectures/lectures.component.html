@@ -1,0 +1,8 @@
+<div style="min-height: 87.9vh; " class=" mdl-shadow--2dp" >
+  <app-toolbar-conferences [titleToolbar]="'Лекции'"></app-toolbar-conferences>
+  <div class="mdl-grid">
+    <div *ngFor="let lecture of lectures.lectures"  class="lecture-card mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-phone mdl-cell--12-col-tablet"  >
+      <app-lecture-card [lecture]="lecture"></app-lecture-card>
+    </div>
+  </div>
+</div>

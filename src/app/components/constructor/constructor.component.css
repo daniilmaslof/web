@@ -1,0 +1,15 @@
+button{
+  display: block;
+}
+.flex{
+  display: flex;
+}
+.navigation{
+  flex: 0.25;
+}
+.bad{
+  border: solid 10px black;
+flex: 1;
+  height: 70vh;
+}
+

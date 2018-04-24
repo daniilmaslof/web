@@ -1,0 +1,126 @@
+
+  <!--<div style="display: flex; justify-content: center; font-size: 26px; ">Спикеры</div>-->
+
+
+  <!--<mat-grid-list class="mdl-color&#45;&#45;white mdl-shadow&#45;&#45;2dp"  rowHeight="calc(35vh)" gutterSize="20px"  cols='1' >-->
+    <!--<mat-grid-tile class="" [colspan]="1" [rowspan]="1" *ngFor="let speaker of model.speakers"   >-->
+      <!--<mat-card  class="speakerCard">-->
+       <!--<mat-card-header style="height: 20%">-->
+         <!--<div mat-card-avatar class="example-header-image"></div>-->
+         <!--<mat-card-title style=" font-size: 0.9em; width: calc(100% + 24px);"> {{speaker.name}} {{speaker.surName}}-->
+          <!--{{speaker.otchestvo}}-->
+        <!--</mat-card-title>-->
+       <!--</mat-card-header>-->
+        <!--<img height="80%" mat-card-image src="{{speaker.photo.src}}">-->
+        <!--&lt;!&ndash;<mat-card-content style=" height: 30%; text-overflow: ellipsis; overflow: hidden ">&ndash;&gt;-->
+            <!--&lt;!&ndash;The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.&ndash;&gt;-->
+            <!--&lt;!&ndash;A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally&ndash;&gt;-->
+            <!--&lt;!&ndash;bred for hunting.&ndash;&gt;-->
+        <!--&lt;!&ndash;</mat-card-content>&ndash;&gt;-->
+        <!--<mat-card-actions ><button class="buttonCard mat-elevation-z24" mat-raised-button   (click)="openDialog()" color="primary">Edit</button>-->
+         <!--&lt;!&ndash;<a mat-raised-button [routerLink]="['/constructor/conference', speaker.conference_id, 'section', speaker.section_id, 'lecture', speaker.lection_id,&ndash;&gt;-->
+    <!--&lt;!&ndash;'speaker', speaker.id]"   color="primary">Wiew</a>&ndash;&gt;-->
+        <!--</mat-card-actions>-->
+      <!--</mat-card>-->
+    <!--</mat-grid-tile>-->
+  <!--</mat-grid-list>-->
+
+<!--<mat-toolbar   class="mdl-shadow&#45;&#45;2dp">-->
+  <!--<span style="flex: 1"></span>-->
+    <!--<h2 style="flex: 1">Спикеры</h2>-->
+    <!--<button style="margin: 5px" *ngIf="!sort && !search" mat-raised-button (click)="showSearchBar()" color="primary">-->
+      <!--<mat-icon>search</mat-icon>-->
+      <!--<span>Search</span>-->
+    <!--</button>-->
+  <!--<mat-input-container style="margin: 5px" *ngIf="search">-->
+    <!--<input matInput placeholder="Поиск Спикера">-->
+  <!--</mat-input-container>-->
+  <!--<button *ngIf="!sort && !search " mat-raised-button (click)="showSort()" color="primary">-->
+    <!--<mat-icon>sort</mat-icon>-->
+    <!--<span>Sort</span>-->
+  <!--</button>-->
+  <!--<button style="margin: 5px" *ngIf="sort" mat-raised-button  color="primary">-->
+    <!--<svg xmlns="http://www.w3.org/2000/svg"  fill="rgb(255, 255, 255)" width="24" height="24" viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>-->
+    <!--<span>Сортировать по дате</span>-->
+  <!--</button>-->
+  <!--<button *ngIf="sort" mat-raised-button  color="primary">-->
+    <!--<svg  xmlns="http://www.w3.org/2000/svg" fill="rgb(255, 255, 255)" width="24" height="24" viewBox="0 0 24 24" ><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>-->
+    <!--<span>Сортировать по алфовиту</span>-->
+  <!--</button>-->
+  <!--<button *ngIf="sort || search" mat-icon-button (click)="close()" >-->
+    <!--<mat-icon>close</mat-icon>-->
+  <!--</button>-->
+
+<!--</mat-toolbar>-->
+  <!--<div class="mdl-grid" >-->
+    <!--<div *ngFor="let speaker of model.speakers" class="mdl-cell mdl-cell&#45;&#45;4-col-desktop demo-charts">-->
+      <!--<div class="mdl-card cardSpeaker mdl-shadow&#45;&#45;2dp  mdl-card&#45;&#45;border">-->
+
+        <!--<div class="mdl-card__title" [style.background-size]="'cover'" [style.background-position]="'center'"-->
+             <!--[ngStyle]="{background:' url('+speaker.photo.src +')'}">-->
+          <!--<h2 class="mdl-card__title-text">{{speaker.name}} {{speaker.surName}}</h2>-->
+        <!--</div>-->
+
+        <!--<div class="mdl-card__actions">-->
+          <!--<button class="buttonCard " mat-raised-button   (click)="openDialog()" color="primary">Edit</button>-->
+        <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <div style="min-height: 87.9vh; " class=" mdl-shadow--2dp" >
+    <app-toolbar-conferences [titleToolbar]="'Спикеры'"></app-toolbar-conferences>
+   <div class="mdl-grid">
+    <div *ngFor="let speaker of speakers.speakers"  class="mdl-cell mdl-cell-4-col-desktop "  >
+<app-speaker-card class="speakerCard" [speaker]="speaker"></app-speaker-card>
+    </div>
+   </div>
+    <div class="paginator flex">
+      <span class="flex_1" ></span>
+      <div class=""></div>
+      <mat-paginator class="flex_1" style=" background-color:#f5f5f5" [length]="100"
+                     [pageSize]="6">
+      </mat-paginator>
+    </div>
+    <!--<div class="mdl-grid"  style="width: 100%">-->
+      <!--<div *ngFor="let speaker of model.speakers" style="padding-right: 32px" class="mdl-cell mdl-cell&#45;&#45;4-col-desktop ">-->
+        <!--<article class=" material-card  mdl-shadow&#45;&#45;2dp  mdl-card&#45;&#45;border">-->
+          <!--<h2>-->
+            <!--<span>{{speaker.name}}</span>-->
+            <!--<strong>-->
+              <!--<i class="fa fa-fw fa-star"></i>-->
+              <!--{{speaker.surName}}-->
+            <!--</strong>-->
+          <!--</h2>-->
+          <!--<div class="mc-content">-->
+            <!--<div class="img-container" style="max-width: 100%"  [style.background-size]="'cover'" [style.background-position]="'bot'"-->
+                 <!--[ngStyle]="{background:' url('+speaker.photo.src +')'}">-->
+            <!--</div>-->
+           <!--</div>-->
+         <!--</article>-->
+       <!--</div>-->
+     <!--</div>-->
+
+     <!--<div class="mdl-grid" >-->
+      <!--<div *ngFor="let speaker of model.speakers" class="mdl-cell mdl-cell&#45;&#45;4-col-desktop demo-charts">-->
+        <!--<div class="mdl-card cardSpeaker mdl-shadow&#45;&#45;2dp mdl-card&#45;&#45;border mdl-card&#45;&#45;horizontal-2">-->
+
+          <!--<div class="mdl-card__title" [style.background-size]="'cover'" [style.background-position]="'centr'"-->
+               <!--[ngStyle]="{background:' url('+speaker.photo.src +')'}">-->
+            <!--<h2 class="mdl-card__title-text">{{speaker.name}} {{speaker.surName}}</h2>-->
+          <!--</div>-->
+          <!--<div class="mdl-card__title">-->
+            <!--<h2 class="mdl-card__title-text">{{speaker.surName}} {{speaker.name}}</h2>-->
+            <!--<div class="mdl-card__subtitle-text">{{speaker.tagsSpeaker}}</div>-->
+          <!--</div>-->
+          <!--<div class="mdl-card__media"-->
+             <!--[style.background-size]="'cover'" [style.background-position]="'center'"-->
+                  <!--[ngStyle]="{background:' url('+speaker.photo.src +')'}">-->
+          <!--</div>-->
+          <!--<div class="mdl-card__actions">-->
+            <!--<button class="buttonCard " mat-raised-button   (click)="openDialog()" color="primary">Edit</button>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Сохранить данные и перейти</h1>
+<div mat-dialog-content>
+  <p>Прикрепить к </p>
+
+  <mat-form-field *ngIf="isSpeaker" >
+    <mat-select  placeholder="Выбрать Лекцию к которой" >
+      <mat-option *ngFor="let nameLecture of data.nameLectures" [value]="nameLecture">{{nameLecture}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field   *ngIf="isLecture" >
+    <mat-select placeholder="Выбрать Секцию к которой" >
+      <mat-option *ngFor="let nameLecture of data.nameLectures" [value]="nameLecture">{{nameLecture}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Назад</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Send</button>
+  <button mat-button [mat-dialog-close]="false" cdkFocusInitial>Не сохранять</button>
+</div>

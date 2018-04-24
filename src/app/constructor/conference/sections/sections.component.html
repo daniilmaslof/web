@@ -1,0 +1,8 @@
+<div class="Wrapper mdl-shadow--2dp" >
+  <app-toolbar-conferences [titleToolbar]="'Секции'"></app-toolbar-conferences>
+  <div class="mdl-grid">
+    <div *ngFor="let section of sections.sections"  class="lecture-card mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-phone mdl-cell--12-col-tablet"  >
+      <app-section-card [section]="section"></app-section-card>
+    </div>
+  </div>
+</div>

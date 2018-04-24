@@ -1,0 +1,11 @@
+.Wrapper{
+  min-height: 87.9vh;
+}
+:host{
+  padding-left: 16px;
+  padding-right: 16px;
+  width: calc(100% - 32px);
+}
+.lecture-card{
+  margin: auto;
+}

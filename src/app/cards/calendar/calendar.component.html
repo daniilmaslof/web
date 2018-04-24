@@ -1,0 +1,12 @@
+<div class="wrapper" data-tid="Deck">
+  <span class="points"> очки: </span> <p (click)="reload()" data-tid="Menu-newGame" >начать занова</p>
+  <span class="container"  *ngFor="let card of  cardTable?.cards; ">
+ <span><mat-card (click)="clickCards(card)" [@animationCard]="card.animationStack.animationStateNow" (@animationCard.done)="onDone($event, card)" >
+    <mat-card-title >{{card.speaker.name}} {{card.speaker.surName}} {{card.speaker.otchestvo}} </mat-card-title>
+    <img mat-card-image src="{{card.speaker.photo.src}}">
+    <mat-card-actions><a mat-raised-button
+                           class="speakerCard" color="primary">Wiew</a> </mat-card-actions>
+  </mat-card>
+   </span>
+    </span>
+</div>

@@ -1,0 +1,120 @@
+.actionPanel{
+  display: flex;
+
+  flex: 4;
+  height: calc(3em + 2vh);
+  align-items: flex-end;
+}
+.actionPanel span{
+flex: 1;
+}
+.actionPanel span button{
+  font-size: 3em;
+  font-weight: 200;
+  color: lightgrey;
+}
+.wrap{
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+@media screen and (max-width: 900px){
+  .wrap{
+    font-family: 'Roboto', sans-serif;
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 800px){
+  .wrap{
+    font-family: 'Roboto', sans-serif;
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 700px){
+  .wrap{
+    font-family: 'Roboto', sans-serif;
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 600px){
+  .wrap{
+    font-family: 'Roboto', sans-serif;
+    font-size: 6px;
+  }
+}
+.sample{
+  min-width: 1024px;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top:0;
+  left:0;
+  background-image:
+  url("../../../assets/img/1.png"),
+  url('../../../assets/img/2.png'),
+  url('../../../assets/img/5 (2).png'),
+url('../../../assets/img/6.png'),
+  url('../../../assets/img/4 (1).png');
+  background-attachment: fixed;
+  background-position: bottom center , top left, center right,0% 75%, 0 0 ;
+  background-repeat: no-repeat, no-repeat ;
+  background-size: 100vw 20vh , 100vw 42vh , 40vw 70vh, 100vw 60vh, 20vw 10vh;
+}
+/*@media screen and (max-width: 1024px){*/
+  /*.sample {*/
+    /*left: 50%;*/
+    /*margin-left: -512px;*/
+  /*}*/
+/*}*/
+.title{
+  margin-top: 2vh;
+  padding-left: 10vw;
+}
+.title :first-child{
+  font-size: 5em;
+  color: #DCE3CD;
+  font-weight: 300;
+}
+.title .button{
+  font-weight: 200;
+  border-radius: 1vh;
+  background: gainsboro;
+  min-height: 7vh;
+  margin-right: 2vw;
+}
+.title  p {
+  margin: 0;
+
+  font-size: 4em;
+  color: #A69EAD;
+  font-weight: 200;
+}
+.header {
+  height: 40vh;
+  width: 100vw;
+/ / background: url('../../../assets/img/2.png') no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+.sircle{
+  border-radius: 50%;
+  content: ' ';
+  background: white;
+  border: 10px solid #f27285;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+}
+.titleFooter{
+  display: flex;
+  font-size: 3em;
+  color: antiquewhite;
+  margin-top: 3vh;
+}
+.titleFooter :last-child{
+  flex: 3;
+}
+.flex{
+  display: flex;
+}

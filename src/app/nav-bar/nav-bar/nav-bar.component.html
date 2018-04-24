@@ -1,0 +1,30 @@
+
+  <!--<header class="demo-drawer-header">-->
+    <!--<img src="https://apptractor.ru/wp-content/uploads/2017/02/sber.png" class="demo-avatar">-->
+    <!--<div class="demo-avatar-dropdown">-->
+      <!--<span>SberTech Россия</span>-->
+      <!--<div class="mdl-layout-spacer"></div>-->
+      <!--<button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button&#45;&#45;icon">-->
+        <!--<i class="material-icons" role="presentation">arrow_drop_down</i>-->
+        <!--<span class="visuallyhidden">Контакты</span>-->
+      <!--</button>-->
+      <!--<ul class="mdl-menu mdl-menu&#45;&#45;bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">-->
+        <!--<li class="mdl-menu__item">sbertech@gmail.com</li>-->
+        <!--<li class="mdl-menu__item">+7(495)-800-800</li>-->
+        <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Добавить контакт...</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</header>-->
+
+    <div *ngFor="let  menuItem of menuItemsHome" >
+      <button   (click)="navigate(menuItem)"  class="mdl-button mdl-js-button mdl-button--accent"  >
+        <i class="mdl-color-text--blue-grey-400 material-icons" >{{menuItem.icon}}</i>
+        {{menuItem.name}}
+      </button>
+    </div>
+     <!--<a class="mdl-navigation__link" href=""><i class="mdl-color-text&#45;&#45;blue-grey-400 material-icons" role="presentation">class</i>Новости</a>-->
+    <!--<a class="mdl-navigation__link" href=""><i class="mdl-color-text&#45;&#45;blue-grey-400 material-icons" role="presentation">watch_later</i>Наши конференции</a>-->
+    <!--<a class="mdl-navigation__link" href=""><i class="mdl-color-text&#45;&#45;blue-grey-400 material-icons" role="presentation">account_circle</i>О нас</a>-->
+    <!--</div>-->
+    <!--<a  class="mdl-button mdl-js-button mdl-button&#45;&#45;accent">Создать конференцию</a>-->
+
