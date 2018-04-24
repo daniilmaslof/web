@@ -7,7 +7,7 @@ export class ImagePreviewDirective implements OnChanges {
 @Input() media: any ;
 @Input()type: any ;
   constructor(private el: ElementRef, private renderer: Renderer) { }
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes) {
     console.log(changes);
     let reader = new FileReader();
     let el = this.el;

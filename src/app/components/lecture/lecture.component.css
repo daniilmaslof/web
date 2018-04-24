@@ -1,8 +1,8 @@
 label{
   display: block;
 }
-h1{
-
+app-lecture{
+  flex: 1;
 }
 app-speaker-element{
   display: inline-block;
@@ -14,5 +14,18 @@ mat-form-field{
 }
 .q{
   width: 100px
+}
+:host{
+  display: block;
+  border: 1px solid black;
+}
+.ss{
+  overflow: hidden;
+}
+.speakerCard{
+margin-right: 20px;
+}
+mat-grid-list{
+  margin-bottom: 20px;
 }
 

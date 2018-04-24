@@ -5,12 +5,13 @@ import {CanActivate, Router} from "@angular/router";
 @Injectable()
 export class EnsureAuthenticatedService implements CanActivate {
 
-  constructor(private auth: AuthService, private  router: Router) { }
+  constructor(private  router: Router) { }
   canActivate(): boolean {
     if (localStorage.getItem('token')) {
       return true;
     } else {
-      this.router.navigateByUrl('login');
+      console.log('f');
+      this.router.navigateByUrl('http://localhost:4200/login');
       return false;
     }
   }

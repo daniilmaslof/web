@@ -13,7 +13,7 @@ private BaseUrl = 'http://localhost:8080';
     console.log(email, password);
     let url = `${this.BaseUrl}/login`;
     return this.http.post(url, {email, password}).do(
-      res => this.setSession).publishReplay();
+      res => this.setSession);
   }
   private setSession(authResult) {
     localStorage.setItem('id_token', authResult.idToken);

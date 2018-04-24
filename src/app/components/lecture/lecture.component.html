@@ -1,45 +1,70 @@
-<h1>спикеры</h1>
-<app-speaker-element  *ngFor="let speaker of model.speakers; index as i;" (click)="navigae(i, speaker)" [speaker]="speaker">
-</app-speaker-element>
-<button  (click)="addSpeaker()">добавить speaker</button>
-<form class="form-group" #f="ngForm" novalidate >
-<mat-input-container>
-  <input matInput placeholder="Тема Лекции"  type="text" class="form-control" name="topicLecture"
-            [(ngModel)]="model.topicLecture" required  #topicLecture='ngModel'>
-</mat-input-container>
-  <mat-form-field>
-  <textarea matInput placeholder="Информация о Лекции"  type="text" class="form-control" name="informationLecture"
-            matTextareaAutosize matAutosizeMinRows="3"
-            [(ngModel)]="model.informationLecture" required matAutosizeMaxRows="12" #informationLecture='ngModel'>
-  </textarea>
-  </mat-form-field>
-  <mat-input-container>
-  <label>длительность лекции</label>
-  <input matInput type="text" class="form-control" name="durationLecture" [(ngModel)]="model.durationLecture" required
-         #durationLecture='ngModel'>
-  </mat-input-container>
-  <mat-input-container>
-  <label>кабинет лекции</label>
-  <input matInput type="text" class="form-control" name="hallLecture" [(ngModel)]="model.hallLecture" required
-         #hallLecture='ngModel'>
-  </mat-input-container>
+<!--&lt;!&ndash;<div class="ss">&ndash;&gt;-->
+  <!--&lt;!&ndash;<h1>спикеры</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;<app-speaker-element  *ngFor="let speaker of model.speakers; index as i;" (click)="navigae(i, speaker)" [speaker]="speaker">&ndash;&gt;-->
+<!--&lt;!&ndash;</app-speaker-element>&ndash;&gt;-->
+<!--<h1 class="Name" style="display: flex; align-items: center; justify-content: center; margin: 0;">Лекция: {{model.id}}</h1>-->
+<!--<form  class="form-group" #f="ngForm" novalidate >-->
+  <!--<mat-form-field style="width: 200px">-->
+  <!--<mat-select  placeholder="Выберете секцию" required>-->
+
+<!--<mat-option *ngFor="let nameSection of model.nameSections" [value]="nameSection">{{nameSection}}</mat-option>-->
+  <!--</mat-select>-->
+  <!--</mat-form-field>-->
+  <!--<mat-input-container>-->
+    <!--<input matInput placeholder="Тема Лекции"  type="text" class="form-control" name="topicLecture"-->
+           <!--[(ngModel)]="model.topic" required  #topicLecture='ngModel'>-->
+  <!--</mat-input-container>-->
+
+  <!--<mat-form-field>-->
+  <!--<textarea matInput placeholder="Информация о Лекции"  type="text" class="form-control" name="informationLecture"-->
+            <!--matTextareaAutosize matAutosizeMinRows="3"-->
+            <!--[(ngModel)]="model.about"  matAutosizeMaxRows="12" #informationLecture='ngModel'>-->
+  <!--</textarea>-->
+  <!--</mat-form-field>-->
+  <!--<mat-input-container>-->
+    <!--<label>длительность лекции</label>-->
+    <!--<input matInput type="text" class="form-control" name="durationLecture" [(ngModel)]="model.duration"-->
+           <!--#durationLecture='ngModel'>-->
+  <!--</mat-input-container>-->
+  <!--<mat-input-container>-->
+    <!--<label>кабинет лекции</label>-->
+    <!--<input matInput type="text" class="form-control" name="hallLecture" [(ngModel)]="model.hallLecture" required-->
+           <!--#hallLecture='ngModel'>-->
+  <!--</mat-input-container>-->
+
+<!--<div style="margin:0 20% 0 20%; border: 1px solid black ">-->
+  <!--<div style="display: flex; justify-content: center; font-size: 26px; ">Спикеры</div>-->
+<!--<mat-grid-list  cols='2' rowHeight="400px">-->
+<!--<mat-grid-tile *ngFor="let speaker of model.speakers"  ><mat-card   class="speakerCard">-->
+   <!--<mat-card-title>{{speaker.name}} {{speaker.surName}} {{speaker.otchestvo}} </mat-card-title>-->
+    <!--<img mat-card-image src="{{speaker.photo.src}}">-->
+    <!--<mat-card-actions><a mat-raised-button [routerLink]="['speaker',speaker.id]" color="primary">Wiew</a> </mat-card-actions>-->
+  <!--</mat-card>-->
+<!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->
+  <!--<button  style="margin-bottom: 40px " mat-raised-button color="primary" (click)="addSpeaker()">добавить speaker</button>-->
+<!--</div>-->
+
+
 
   <!--<mat-form-field>-->
   <!--<label>дата лекции</label>-->
   <!--<input  matInput  placeholder="Выбрать дату" type="text" class="form-control" name="dateLecture" [(ngModel)]="model.dateLecture" required-->
   <!--#dateLecture='ngModel'>-->
   <!--</mat-form-field>-->
-  <mat-form-field  class="q">
-    <input matInput class="q"  [(ngModel)]="model.dateLecture" name="dateLecture" [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker-toggle class="q" matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker class="q" #picker></mat-datepicker>
-  </mat-form-field>
+  <!--<mat-form-field  class="q">-->
+    <!--<input matInput class="q"  [(ngModel)]="model.date" name="dateLecture" [matDatepicker]="picker" placeholder="Choose a date">-->
+    <!--<mat-datepicker-toggle class="q" matSuffix [for]="picker"></mat-datepicker-toggle>-->
+    <!--<mat-datepicker class="q" #picker></mat-datepicker>-->
+  <!--</mat-form-field>-->
 
-  <label>теги лекции</label>
-  <input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsLecture" required
-         #tagsLecture='ngModel'>
-  <button type="button" (click)="onSubmit()">Отправить</button>
-</form>
-<pre>
-  {{f.value| json}}
-</pre>
+  <!--<label>теги лекции</label>-->
+  <!--<input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsLecture" required-->
+         <!--#tagsLecture='ngModel'>-->
+  <!--<button type="button" (click)="onSubmit()">Отправить</button>-->
+<!--</form>-->
+<!--<pre>-->
+  <!--{{f.value| json}}-->
+<!--</pre>-->
+
+

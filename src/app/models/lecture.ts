@@ -2,20 +2,38 @@ import {Speaker} from "./speaker";
 import {Photo} from "./photo";
 
 export class Lecture {
-  speakers: Array<Speaker>;
-  constructor(public topicLecture = '1',
-              public  informationLecture = '2',
-              public  dateLecture = new Date(),
-              public  hallLecture = '4',
-              public  tagsLecture = '5',
-              public  durationLecture = '6',
+  public conference_id: number;
+  public section_id: number;
+  public nameSection: string;
+  public nameSections:  Array<String>;
+  public id: number;
+  public topic: string;
+  public about: string;
+  public date: Date;
+  public duration: string;
+  public tagsLecture: string[];
+  public hallLecture: string;
+  public shortInfAboutLecture: string;
+public  photo = new Photo('http://www.manege.spb.ru/wp-content/uploads/2016/06/auditoriya.jpg');
+
+  constructor(topic = 'статусе реальности в искусстве',
+              about = '',
+              dateLecture = new Date(),
+              hallLecture = '9 кабинет',
+              tagsLecture = [] ,
+              shortInfAboutLecture = 'Европейская живопись XIX века: строительство прошлого, открытие современности. Лектор - Илья Доронченков - профессор факультета истории искусств Европейского университета в Санкт-Петербурге.',
+              duration = '2 часа',
+              photo = new Photo('http://www.manege.spb.ru/wp-content/uploads/2016/06/auditoriya.jpg')
               ) {
-    this.speakers = new Array<Speaker>();
-    let speaker = new Speaker();
-    console.log(speaker);
-    this.speakers.push(speaker);
-    let sp =  new Speaker(new Photo('https://uploadrb.ru/upload/admins/picture/1237/507ab9f409db99d5aaeb46f8652c72d0.jpg'), 'чува2')
-    this.speakers.push(sp);
-    console.log(this.speakers);
+    this.id = 1;
+    this.about = about;
+    this.date = dateLecture;
+    this.topic = topic;
+    this.hallLecture = hallLecture;
+    this.tagsLecture = [];
+    this.shortInfAboutLecture = shortInfAboutLecture;
+    this.duration = duration;
+    this.photo = photo;
+    this.tagsLecture = tagsLecture;
   }
 }

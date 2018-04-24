@@ -1,42 +1,61 @@
-<form class="form-group" #f="ngForm" novalidate >
-  <mat-input-container>
-    <label>Имя</label>
-  <input matInput type="text" class="form-control" name="name" [(ngModel)]="model.name"   required
-         #name='ngModel'>
-  </mat-input-container>
-  <mat-input-container>
-    <label>Фамилия</label>
-  <input matInput type="text" class="form-control" name="surName" [(ngModel)]="model.surName" required
-         #surName='ngModel'>
-  </mat-input-container>
-  <mat-input-container>
-  <label>Отчество</label>
-  <input matInput type="text" class="form-control" name="otchestvo" [(ngModel)]="model.otchestvo" required
-         #otchestvo='ngModel'>
-  </mat-input-container>
-  <label class="qw">фОТО</label>
-  <div ng2FileDrop
-       [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
-       (fileOver)="fileOverBase($event)"
-       [uploader]="uploader"
-       class="my-drop-zone">
-    Base drop zone
-  </div>
-<img appImagePreview class="image" src="" [media]="file" [type]="type">
-  <mat-form-field>
-  <textarea matInput placeholder="Информация о ведущем"  type="text" class="form-control" name="informationSpeaker"
-            [(ngModel)]="model.informationSpeaker"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="12"
-         #informationSpeaker='ngModel'>
-  </textarea>
-  </mat-form-field>
-  <label>теги</label>
-  <input type="text" class="form-control" name="tagsLecture" [(ngModel)]="model.tagsSpeaker" required
-         #tagsSpeaker='ngModel'>
-
-  <button mat-raised-button color="primary"  >send
-  </button>
-
-</form>
-<pre>
-  {{f.value| json}}
-</pre>
+<!--<form class="form-group" #f="ngForm" novalidate >-->
+  <!--<mat-input-container >-->
+  <!--<input matInput type="text" placeholder="Имя" class="form-control" name="name" [(ngModel)]="model.name"   required-->
+         <!--#name='ngModel'>-->
+  <!--</mat-input-container>-->
+  <!--<mat-input-container>-->
+  <!--<input matInput type="text" class="form-control" name="surName" placeholder='фамилия' [(ngModel)]="model.surName" required-->
+         <!--#surName='ngModel'>-->
+  <!--</mat-input-container>-->
+  <!--<mat-input-container>-->
+  <!--<input matInput type="text"  placeholder="Отчество" class="form-control" name="otchestvo" [(ngModel)]="model.otchestvo"-->
+         <!--#otchestvo='ngModel'>-->
+  <!--</mat-input-container>-->
+  <!--<label class="qw">фОТО</label>-->
+  <!--<div style="position: relative">-->
+  <!--<span ng2FileDrop-->
+       <!--[ngClass]="{'nv-file-over': hasBaseDropZoneOver}"-->
+       <!--(fileOver)="fileOverBase($event)"-->
+       <!--[uploader]="uploader"-->
+       <!--class="my-drop-zone">-->
+    <!--Base drop zone-->
+  <!--</span>-->
+<!--<img style="position: absolute; left: 0; right: 0; width: 200px; height: 150px; z-index: -1" appImagePreview class="image" src="" [media]="file" [type]="type">-->
+  <!--</div>-->
+  <!--<mat-form-field>-->
+  <!--<textarea matInput placeholder="Информация о ведущем" type="text" class="form-control" name="informationSpeaker"-->
+            <!--[(ngModel)]="model.info" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="12"-->
+            <!--#informationSpeaker='ngModel'>-->
+  <!--</textarea>-->
+  <!--</mat-form-field>-->
+  <!--<mat-form-field class="demo-chip-list">-->
+    <!--<mat-chip-list #chipList>-->
+      <!--<mat-chip *ngFor="let tag of model.tagsSpeaker" [selectable]="selectable"-->
+                <!--[removable]="removable" (remove)="remove(tag)">-->
+        <!--{{tag}}-->
+        <!--<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>-->
+      <!--</mat-chip>-->
+      <!--<input placeholder="New tags..."-->
+             <!--[matChipInputFor]="chipList"-->
+             <!--[matChipInputSeparatorKeyCodes]="separatorKeysCodes"-->
+             <!--[matChipInputAddOnBlur]="addOnBlur"-->
+             <!--(matChipInputTokenEnd)="add($event)" />-->
+    <!--</mat-chip-list>-->
+  <!--</mat-form-field>-->
+  <!--<button mat-raised-button routerLinkActive="active"  (click)="openDialog()" color="primary"  >send-->
+  <!--</button>-->
+<!--</form>-->
+<!--<pre>-->
+  <!--{{f.value| json}}-->
+<!--</pre>-->
+<!--<div class="card-footer">-->
+  <!--<div class="stat">-->
+    <!--<a href="" style="color: black"><span class="value"><i class="fa fa-vk" aria-hidden="true"></i></span></a>-->
+  <!--</div>-->
+  <!--<div class="stat">-->
+    <!--<a href="" style="color: black"><span class="value"><i class="fa fa-linkedin" aria-hidden="true"></i></span></a>-->
+  <!--</div>-->
+  <!--<div class="stat">-->
+    <!--<a href="" style="color: black"><span class="value"><i class="fa fa-user" aria-hidden="true"></i></span></a>-->
+  <!--</div>-->
+<!--</div>-->

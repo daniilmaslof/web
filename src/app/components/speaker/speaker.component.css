@@ -1,7 +1,7 @@
 .my-drop-zone { border: dotted 3px lightgray; }
 .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
 .another-file-over-class { border: dotted 3px green; }
-
+@import  "../../../bootstrap.min.css";
 html, body { height: 100%; }
 mat-form-field{
   display: block;
@@ -9,7 +9,18 @@ mat-form-field{
 .my-drop-zone{
   width: 200px;
   height: 150px;
+  display: inline-block;
 }
 .qw{
   display: block;
+}
+mat-input-container{
+  display: inline-block;
+  width: 25%;
+}
+img{
+  display: inline-block;
+}
+.active{
+  background: darkblue;
 }

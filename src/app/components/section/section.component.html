@@ -1,0 +1,19 @@
+<form class="form-group" #f="ngForm" novalidate >
+  <mat-input-container>
+  <input matInput placeholder="Название секции"  type="text" class="form-control" name="name"
+         [(ngModel)]="model.name" required  #name='ngModel'>
+  </mat-input-container>
+  <label class="qw">Логотип</label>
+  <span ng2FileDrop
+        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+        (fileOver)="fileOverBase($event)"
+        [uploader]="uploader"
+        class="my-drop-zone">
+    Base drop zone
+  </span>
+  <img appImagePreview class="image" src="" [media]="file" [type]="type">
+</form>
+<div>Лекции</div>
+<div  *ngFor="let lection of model.lections; index as i;" >
+  <span>Лекциии нужно имя Топик:</span><a  mat-raised-button [routerLink]="['lecture',i]">{{lection.topic}}</a>
+</div>

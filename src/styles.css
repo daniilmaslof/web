@@ -1,6 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import "bootstrap.min.css";*/
+@import "~material-design-lite/dist/material.cyan-light_blue.min.css";
+@import "~material-design-lite/material.min.css";
 .mat-calendar{
   width: 200px !important;
   height: 250px !important;
 }
+.flex_1{
+  flex: 1;
+}
+.flex{
+  display: flex;
+}
+.centering{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+body{
+  margin: 0px;
+}
+html,body{
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.dialog-no-padding-panel .mat-dialog-container{
+  padding: 0;
+  border-radius: 30px 30px 0 0  ;
+}
+/*app-lecture{*/
+  /*flex: 1;*/
+/*}*/
+/*.all-wrap {*/
+  /*min-height: 100vh;*/
+/*}*/
+
+/*.page-wrap {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*min-height: 100vh;*/
+/*}*/
+
+/*.content {*/
+  /*flex: 1;*/
+/*}*/
+
+
+/*!**/
+ /** Make the Component injected by Router Outlet full height:*/
+ /**!*/
+/*main {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+
+/*}*/
