@@ -1,0 +1,408 @@
+[debug] [2018-04-23T18:57:13.618Z] ----------------------------------------------------------------------
+[debug] [2018-04-23T18:57:13.624Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DanilMaslov\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy --debug
+[debug] [2018-04-23T18:57:13.625Z] CLI Version:   3.17.6
+[debug] [2018-04-23T18:57:13.626Z] Platform:      win32
+[debug] [2018-04-23T18:57:13.627Z] Node Version:  v9.8.0
+[debug] [2018-04-23T18:57:13.628Z] Time:          Mon Apr 23 2018 23:57:13 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:13.628Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-23T18:57:13.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-23T18:57:13.651Z] > authorizing via signed-in user
+[debug] [2018-04-23T18:57:13.656Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/conference-4f097  
+  
+ Mon Apr 23 2018 23:57:13 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:14.615Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:14.623Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/conference-4f097/tokens  
+  
+ Mon Apr 23 2018 23:57:14 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:15.344Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'conference-4f097'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-04-23T18:57:22.607Z] >>> HTTP REQUEST PUT https://conference-4f097.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Mon Apr 23 2018 23:57:22 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:23.870Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database conference-4f097 is valid
+[debug] [2018-04-23T18:57:23.900Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/conference-4f097  
+  
+ Mon Apr 23 2018 23:57:23 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:25.081Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-23T18:57:25.092Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Mon Apr 23 2018 23:57:25 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:26.213Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-23T18:57:26.229Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Mon Apr 23 2018 23:57:26 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:27.280Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-23T18:57:27.295Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-23T18:57:27.303Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Mon Apr 23 2018 23:57:27 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:27.307Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Mon Apr 23 2018 23:57:27 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:28.832Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:28.902Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-23T18:57:28.912Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/conference-4f097  
+  
+ Mon Apr 23 2018 23:57:28 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:29.938Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:29.943Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/473247973970:getServerAppConfig  
+  
+ Mon Apr 23 2018 23:57:29 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:30.708Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-04-23T18:57:30.724Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Mon Apr 23 2018 23:57:30 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:31.901Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:31.906Z] [rules] created ruleset projects/conference-4f097/rulesets/8d1acdb9-7201-4618-8452-333bfb6f5ecd
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-04-23T18:57:31.913Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Mon Apr 23 2018 23:57:31 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:31.918Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/conference-4f097/databases/(default)/indexes  
+  
+ Mon Apr 23 2018 23:57:31 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:32.976Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:33.102Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-23T18:57:33.106Z] [rules] created ruleset projects/conference-4f097/rulesets/56d62833-1308-44e0-86ea-a039294c1efb
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-23T18:57:33.113Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/conference-4f097/configs  
+  
+ Mon Apr 23 2018 23:57:33 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:34.247Z] <<< HTTP RESPONSE 200
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-23T18:57:35.880Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/conference-4f097/uploads/-LAnrYj6gvv_jGIc7wKR?fileCount=85&message=  
+  
+ Mon Apr 23 2018 23:57:35 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-23T18:57:57.151Z] Error: connect ETIMEDOUT 23.251.151.130:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1170:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 23.251.151.130:443
+[debug] [2018-04-24T16:16:39.972Z] ----------------------------------------------------------------------
+[debug] [2018-04-24T16:16:39.975Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DanilMaslov\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-24T16:16:39.975Z] CLI Version:   3.17.6
+[debug] [2018-04-24T16:16:39.975Z] Platform:      win32
+[debug] [2018-04-24T16:16:39.975Z] Node Version:  v9.8.0
+[debug] [2018-04-24T16:16:40.000Z] Time:          Tue Apr 24 2018 21:16:39 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:16:40.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-24T16:16:40.128Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-24T16:16:40.130Z] > authorizing via signed-in user
+[debug] [2018-04-24T16:16:40.133Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-24T16:16:40.133Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/kcEBpkZDwIy-jEL1lWkdn0KRZG_I6yZDo_ZLTAS8p4HMY9QQFvyXjjt83M6PiXfK',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Apr 24 2018 21:16:40 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:16:40.757Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-24T16:16:40.875Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/conference-4f097  
+  
+ Tue Apr 24 2018 21:16:40 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:16:41.840Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-24T16:16:41.840Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/conference-4f097/tokens  
+  
+ Tue Apr 24 2018 21:16:41 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:16:42.713Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'conference-4f097'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-04-24T16:17:14.276Z] >>> HTTP REQUEST PUT https://conference-4f097.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Tue Apr 24 2018 21:17:14 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:15.616Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database conference-4f097 is valid
+[debug] [2018-04-24T16:17:15.618Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/conference-4f097  
+  
+ Tue Apr 24 2018 21:17:15 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:16.922Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-24T16:17:16.927Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Tue Apr 24 2018 21:17:16 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:18.147Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-24T16:17:18.154Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Tue Apr 24 2018 21:17:18 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:18.481Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-24T16:17:18.485Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-24T16:17:18.487Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Tue Apr 24 2018 21:17:18 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:18.488Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Tue Apr 24 2018 21:17:18 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:20.013Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-24T16:17:20.105Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-24T16:17:20.108Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/conference-4f097  
+  
+ Tue Apr 24 2018 21:17:20 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:17:21.234Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-24T16:17:21.234Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/473247973970:getServerAppConfig  
+  
+ Tue Apr 24 2018 21:17:21 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-24T16:18:03.344Z] Error: connect ETIMEDOUT 64.233.162.95:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1170:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 64.233.162.95:443
+[debug] [2018-04-25T06:23:28.464Z] ----------------------------------------------------------------------
+[debug] [2018-04-25T06:23:28.464Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DanilMaslov\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-25T06:23:28.464Z] CLI Version:   3.17.6
+[debug] [2018-04-25T06:23:28.464Z] Platform:      win32
+[debug] [2018-04-25T06:23:28.464Z] Node Version:  v9.8.0
+[debug] [2018-04-25T06:23:28.511Z] Time:          Wed Apr 25 2018 11:23:28 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:23:28.511Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-25T06:23:28.792Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-25T06:23:28.792Z] > authorizing via signed-in user
+[debug] [2018-04-25T06:23:28.792Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-25T06:23:28.792Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/kcEBpkZDwIy-jEL1lWkdn0KRZG_I6yZDo_ZLTAS8p4HMY9QQFvyXjjt83M6PiXfK',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 25 2018 11:23:28 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:23:29.184Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T06:23:29.308Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/conference-4f097  
+  
+ Wed Apr 25 2018 11:23:29 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:23:30.261Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T06:23:30.261Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/conference-4f097/tokens  
+  
+ Wed Apr 25 2018 11:23:30 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:23:31.043Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'conference-4f097'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-04-25T06:24:09.008Z] >>> HTTP REQUEST PUT https://conference-4f097.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Wed Apr 25 2018 11:24:09 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:09.977Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database conference-4f097 is valid
+[debug] [2018-04-25T06:24:09.993Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/conference-4f097  
+  
+ Wed Apr 25 2018 11:24:09 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:11.290Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-25T06:24:11.290Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Apr 25 2018 11:24:11 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:12.462Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-25T06:24:12.462Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Apr 25 2018 11:24:12 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:13.509Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-25T06:24:13.509Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-25T06:24:13.509Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Wed Apr 25 2018 11:24:13 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:13.509Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Wed Apr 25 2018 11:24:13 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:15.118Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T06:24:15.228Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-25T06:24:15.228Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/conference-4f097  
+  
+ Wed Apr 25 2018 11:24:15 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:24:36.643Z] Error: connect ETIMEDOUT 64.233.162.95:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1170:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 64.233.162.95:443
+[debug] [2018-04-25T06:25:12.793Z] ----------------------------------------------------------------------
+[debug] [2018-04-25T06:25:12.798Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DanilMaslov\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy --debug
+[debug] [2018-04-25T06:25:12.800Z] CLI Version:   3.17.6
+[debug] [2018-04-25T06:25:12.800Z] Platform:      win32
+[debug] [2018-04-25T06:25:12.847Z] Node Version:  v9.8.0
+[debug] [2018-04-25T06:25:12.848Z] Time:          Wed Apr 25 2018 11:25:12 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:12.850Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-25T06:25:12.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-25T06:25:12.874Z] > authorizing via signed-in user
+[debug] [2018-04-25T06:25:12.878Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/conference-4f097  
+  
+ Wed Apr 25 2018 11:25:12 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:13.803Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T06:25:13.821Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/conference-4f097/tokens  
+  
+ Wed Apr 25 2018 11:25:13 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:14.587Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'conference-4f097'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-04-25T06:25:23.137Z] >>> HTTP REQUEST PUT https://conference-4f097.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Wed Apr 25 2018 11:25:23 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:24.137Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database conference-4f097 is valid
+[debug] [2018-04-25T06:25:24.137Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/conference-4f097  
+  
+ Wed Apr 25 2018 11:25:24 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:25.315Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-25T06:25:25.346Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Apr 25 2018 11:25:25 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:26.497Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-25T06:25:26.512Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/conference-4f097:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Apr 25 2018 11:25:26 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:27.575Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-25T06:25:27.606Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-25T06:25:27.606Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Wed Apr 25 2018 11:25:27 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:27.606Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/conference-4f097?view=CONSUMER_VIEW  
+  
+ Wed Apr 25 2018 11:25:27 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:28.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T06:25:29.182Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-25T06:25:29.213Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/conference-4f097  
+  
+ Wed Apr 25 2018 11:25:29 GMT+0500 (RTZ 4 (зима))
+[debug] [2018-04-25T06:25:50.441Z] Error: connect ETIMEDOUT 64.233.162.95:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1170:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 64.233.162.95:443
