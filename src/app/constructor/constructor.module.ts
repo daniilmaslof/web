@@ -12,7 +12,7 @@ import {
   MatGridListModule,
   MatIconModule,
   MatInputModule, MatListModule, MatNativeDateModule, MatOptionModule, MatPaginatorModule, MatSelectModule,
-  MatSidenavModule,
+  MatSidenavModule, MatStepperIntl, MatStepperModule,
   MatToolbarModule
 } from "@angular/material";
 import {FileUploadModule} from "ng2-file-upload";
@@ -36,6 +36,8 @@ import { SectionCardComponent } from './conference/sections/section-card/section
 import { SectionDialogComponent } from './conference/sections/section-dialog/section-dialog.component';
 import {NavBarModule} from "../nav-bar/nav-bar.module";
 import {NavBarComponent} from "../nav-bar/nav-bar/nav-bar.component";
+import { NewSpeakerComponent } from './conference/speakers/speaker-card/new-speaker/new-speaker.component';
+import {MatStepperIntlMy} from "./conference/mat-stepper-intl-my";
 
 @NgModule({
   imports: [
@@ -63,7 +65,8 @@ import {NavBarComponent} from "../nav-bar/nav-bar/nav-bar.component";
     MatDialogModule,
     MatChipsModule,
     MatPaginatorModule,
-    NavBarModule
+    NavBarModule,
+    MatStepperModule
   ],
   declarations: [ImagePreviewDirective, SpeakerElementComponent, ConferenceComponent, LectureComponent, SpeakerComponent,
     ConstructorComponent,
@@ -78,8 +81,10 @@ import {NavBarComponent} from "../nav-bar/nav-bar/nav-bar.component";
   LectureCardComponent,
   DialogLectureComponent,
   SectionCardComponent,
-  SectionDialogComponent],
-  entryComponents: [DialogOverviewExampleDialogComponent, DialogLectureComponent],
-}
+  SectionDialogComponent,
+  NewSpeakerComponent],
+  entryComponents: [DialogOverviewExampleDialogComponent, DialogLectureComponent, NewSpeakerComponent],
+  providers: [{provide: MatStepperIntl, useClass: MatStepperIntlMy}]
+},
   )
 export class ConstructorModule { }

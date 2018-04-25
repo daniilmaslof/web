@@ -1,12 +1,16 @@
 <mat-toolbar   class="mdl-shadow--2dp">
+  <button  mat-raised-button (click)="openDialog()" color="primary">
+    <mat-icon>add</mat-icon>
+    <span>Создать {{titleToolbar}}а</span>
+  </button>
   <span style="flex: 1"></span>
-  <h2 style="flex: 1">{{titleToolbar}}</h2>
+  <h2 style="flex: 1">{{titleToolbar}}ы</h2>
   <button style="margin: 5px" *ngIf="!sort && !search" mat-raised-button (click)="showSearchBar()" color="primary">
     <mat-icon>search</mat-icon>
     <span>Search</span>
   </button>
   <mat-input-container style="margin: 5px" *ngIf="search">
-    <input matInput placeholder="Поиск {{titleToolbar}}">
+    <input matInput placeholder="Поиск {{titleToolbar}}а">
   </mat-input-container>
   <button *ngIf="!sort && !search " mat-raised-button (click)="showSort()" color="primary">
     <mat-icon>sort</mat-icon>

@@ -42,10 +42,14 @@ export class DialogLectureComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
   onSubmit() {
-    this.uploaderPhoto.uploadAll();
+  this.model.files = this.uploaderFile.queue.map(
+    (val) => { return val._file; }
+  );
+    this.uploaderFile.cancelAll();
     this.form.reset();
-    this.router.navigateByUrl('lecture');
+    // this.router.navigateByUrl('lecture');
 
   }
   // canDeactivate() {

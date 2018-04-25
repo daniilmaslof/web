@@ -19,11 +19,13 @@
 <!--</div>-->
 <div class="mdl-layout mdl-js-layout headerDialog" >
 <header class="mdl-layout__header mdl-typography--headline titleDialog" >
-    <div>Создать спикера</div>
+    <div>Редактировать спикера</div>
 </header>
 
 <div class="mdl_layout__content">
-<form class="form-group mdl-grid mdl-grid--no-spacing " #f="ngForm" novalidate >
+<form class="form-group" #f="ngForm" novalidate >
+  <div class="mdl-grid mdl-grid--no-spacing  mdl-shadow--2dp">
+  <!--<div class ='mdl-shadow&#45;&#45;2dp mdl-cell&#45;&#45;12-col-tabletmdl-cell&#45;&#45;12-col-desktop'>-->
   <div class="title mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-typography--title ">Персональные данные </div>
   <div class="title mdl-cell--4-col-desktop mdl-typography--title  onlyDesktop">Краткая Информация </div>
   <div class="title mdl-cell--4-col-desktop mdl-typography--title  onlyDesktop"> Фото </div>
@@ -43,7 +45,8 @@
   </div>
   <div class="title mdl-cell--12-col-phone mdl-cell--12-col-tablet  mdl-typography--title  onlyTabletOrPhone">Краткая Информация </div>
   <mat-form-field class=" mdl-cell--12-col-phone mdl-cell--12-col-tablet mdl-cell mdl-cell--4-col-desktop ">
-  <textarea  matInput placeholder="Краткая Информация " type="text" class="PaddingCellInput form-control" name="shortInformation"
+    <mat-placeholder>Краткая информация</mat-placeholder>
+  <textarea  matInput type="text" class="PaddingCellInput form-control" name="shortInformation"
             [(ngModel)]="model.shortInformation" matTextareaAutosize   matAutosizeMinRows="8" matAutosizeMaxRows="8"
             #informationSpeaker='ngModel'>
   </textarea>
@@ -113,12 +116,15 @@
   </mat-form-field>
     </div>
   </div>
-  <div mat-dialog-actions class="actionsDialog">
-    <button mat-raised-button routerLinkActive="active"  (click)="onSubmit()" color="primary"  >send
+  <!--</div>-->
+  </div>
+  <div mat-dialog-actions class="actionsDialog " >
+    <div class="">
+    <button mat-raised-button style="margin: 5px" routerLinkActive="active"  (click)="onSubmit()" color="primary"  >send
     </button>
     <button mat-button  (click)="onNoClick()">Назад</button>
     <button mat-button  [mat-dialog-close]="data.speaker.nameLectures" cdkFocusInitial>Send</button>
-
+    </div>
   </div>
 </form>
 

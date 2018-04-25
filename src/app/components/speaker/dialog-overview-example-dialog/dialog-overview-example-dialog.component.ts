@@ -17,7 +17,6 @@ const URL = 'http://localhost';
 export class DialogOverviewExampleDialogComponent implements  OnInit, CanComponentDeactivate {
   file: any;
   type: any;
-  animal: string;
   name: string;
   sendData = false;
   visible: boolean = true;

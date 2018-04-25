@@ -13,6 +13,7 @@ export class Lecture {
   public duration: string;
   public tagsLecture: string[];
   public hallLecture: string;
+  public  files: File[];
   public shortInfAboutLecture: string;
 public  photo = new Photo('http://www.manege.spb.ru/wp-content/uploads/2016/06/auditoriya.jpg');
 
